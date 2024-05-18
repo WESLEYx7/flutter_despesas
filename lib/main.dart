@@ -58,14 +58,45 @@ class MyApp extends StatelessWidget {
                   child: Row(
                     children: [
                       Container(
+                        margin: EdgeInsets.symmetric(
+                          horizontal: 15,
+                          vertical: 10
+                        ),
+                        decoration: BoxDecoration(
+                          border: Border.all(
+                            color: Colors.deepPurple,
+                            width: 2,
+                          )
+                        ),
+                        padding: EdgeInsets.all(10),
                         child: Text(
-                          tr.value.toString()
+                          tr.value.toString(),
+                          style: TextStyle(
+                            fontWeight: FontWeight.bold,
+                            fontSize: 20,
+                            color: Colors.purple
+                          ),
                         ),
                       ),
                       Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
                         children: <Widget> [
-                          Text(tr.title),
-                          Text(tr.date.toString())
+                          Text(
+                            tr.title,
+                            style: TextStyle(
+                              fontWeight: FontWeight.w100,
+                              fontSize: 15,
+                              color: Colors.pink
+                              ),
+                            ),
+                          Text(
+                            tr.date.toString(),
+                            style: TextStyle(
+                              fontWeight: FontWeight.normal,
+                              fontSize: 12,
+                              color: Colors.grey[700],
+                            ),
+                          ),
                         ]
                       )
                     ],
