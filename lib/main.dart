@@ -8,7 +8,7 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final List<Transaction> _transactions = [
+    final List<Transaction> transactions = [
       Transaction(
         id: 't1', 
         title: 'Novo Tênis de Corrida', 
@@ -46,19 +46,17 @@ class MyApp extends StatelessWidget {
           mainAxisAlignment: MainAxisAlignment.spaceAround,
           crossAxisAlignment: CrossAxisAlignment.stretch,
           children: <Widget>[
-            Container(
-              child: Card(
-                child: const Text('Gráfico'),
-                color: Colors.blue,
-              ),
+            const Card(
+              color: Colors.blue,
+              child: Text('Gráfico'),
             ),
             Column(
-              children: _transactions.map((tr) {
+              children: transactions.map((tr) {
                 return Card(
                   child: Row(
                     children: [
                       Container(
-                        margin: EdgeInsets.symmetric(
+                        margin: const EdgeInsets.symmetric(
                           horizontal: 15,
                           vertical: 10
                         ),
@@ -68,10 +66,10 @@ class MyApp extends StatelessWidget {
                             width: 2,
                           )
                         ),
-                        padding: EdgeInsets.all(10),
+                        padding: const EdgeInsets.all(10),
                         child: Text(
                           tr.value.toString(),
-                          style: TextStyle(
+                          style: const TextStyle(
                             fontWeight: FontWeight.bold,
                             fontSize: 20,
                             color: Colors.purple
@@ -83,7 +81,7 @@ class MyApp extends StatelessWidget {
                         children: <Widget> [
                           Text(
                             tr.title,
-                            style: TextStyle(
+                            style: const TextStyle(
                               fontWeight: FontWeight.w100,
                               fontSize: 15,
                               color: Colors.pink
