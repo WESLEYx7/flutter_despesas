@@ -40,15 +40,25 @@ class MyApp extends StatelessWidget {
       home: Scaffold(
         appBar: AppBar(
           backgroundColor: Colors.blue,
-          title: const Text('Minhas Despesas'),
+          title: const Text(
+            'Minhas Despesas',
+            style: TextStyle(
+              color: Colors.white
+            ),
+            ),
         ),
         body: Column(
           mainAxisAlignment: MainAxisAlignment.spaceAround,
           crossAxisAlignment: CrossAxisAlignment.stretch,
           children: <Widget>[
             const Card(
+              elevation: 15,
               color: Colors.blue,
-              child: Text('Gráfico'),
+              child: Text(
+                'Gráfico',
+                style: TextStyle(
+                  color: Colors.white
+                )),
             ),
             Column(
               children: transactions.map((tr) {
@@ -68,7 +78,7 @@ class MyApp extends StatelessWidget {
                         ),
                         padding: const EdgeInsets.all(10),
                         child: Text(
-                          tr.value.toString(),
+                          'R\$ ${tr.value}',
                           style: const TextStyle(
                             fontWeight: FontWeight.bold,
                             fontSize: 20,
